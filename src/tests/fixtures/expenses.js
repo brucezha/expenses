@@ -18,4 +18,4 @@ export default [{
     note: '',
     amount: 80000,
     createdAt: moment(0).add(1, 'month').valueOf()
-}]
+}];
