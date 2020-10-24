@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { EditExpensePage } from '../../components/EditExpensePage';
 import expenses from '../fixtures/expenses';
+import Button from '@material-ui/core/Button';
 
 let startEditExpense, startRemoveExpense, history, wrapper;
 
@@ -30,7 +31,7 @@ test('should handle edit expense', () => {
 });
 
 test('should handle startRemoveExpense expense', () => {
-    wrapper.find('button').simulate('click');
+    wrapper.find(Button).simulate('click');
     expect(history.push).toHaveBeenLastCalledWith('/');
     expect(startRemoveExpense).toHaveBeenLastCalledWith({id : expenses[0].id});
 });

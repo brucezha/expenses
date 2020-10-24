@@ -1,27 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should correctly render ExpensesSummary with one expense 1`] = `
-<div>
-  <h1>
-    Viewing 
-    1
-     
-    expense
-     totalling 
-    $2.34
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <span>
+        1
+      </span>
+       
+      expense
+       totalling 
+      <span>
+        $2.34
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <WithStyles(ForwardRef(Button))
+        color="primary"
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        style={
+          Object {
+            "fontSize": "15px",
+          }
+        }
+        to="/create"
+        variant="contained"
+      >
+        Add Expense 
+      </WithStyles(ForwardRef(Button))>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should correctly render ExpensesSummary with one expense 2`] = `
-<div>
-  <h1>
-    Viewing 
-    23
-     
-    expenses
-     totalling 
-    $23,423,233.32
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <span>
+        23
+      </span>
+       
+      expenses
+       totalling 
+      <span>
+        $23,423,233.32
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <WithStyles(ForwardRef(Button))
+        color="primary"
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        style={
+          Object {
+            "fontSize": "15px",
+          }
+        }
+        to="/create"
+        variant="contained"
+      >
+        Add Expense 
+      </WithStyles(ForwardRef(Button))>
+    </div>
+  </div>
 </div>
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
-import GoogleButton from 'react-google-button'
+import GoogleButton from 'react-google-button';
 
 export const LoginPage = ({ startLogin }) => (
     <div className="box-layout">
