@@ -6,7 +6,8 @@
    @media screen and (min-width: $desktop-breakpoint) {
        flex-direction: row;
        margin-bottom: $l-size;
-   }
+        background-color: black;
+    }
 }
 
 .input-group__item {
