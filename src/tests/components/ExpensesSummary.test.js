@@ -11,3 +11,8 @@ test('should correctly render ExpensesSummary with one expense', () => {
     const wrapper = shallow(<ExpensesSummary expensesCount={23} expensesTotal={2342323332} />);
     expect(wrapper).toMatchSnapshot();
 });
+
+test('should correctly render ExpensesSummary with one expense and one filtered expense', () => {
+    const wrapper = shallow(<ExpensesSummary expensesCount={23} expensesTotal={2342323332} expensesCountNoFilter={1} />);
+    expect(wrapper).toMatchSnapshot();
+});

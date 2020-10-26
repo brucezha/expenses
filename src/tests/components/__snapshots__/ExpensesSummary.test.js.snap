@@ -14,8 +14,10 @@ exports[`should correctly render ExpensesSummary with one expense 1`] = `
       <span>
         1
       </span>
+       out of 
+      <span />
        
-      expense
+      expenses
        totalling 
       <span>
         $2.34
@@ -69,8 +71,69 @@ exports[`should correctly render ExpensesSummary with one expense 2`] = `
       <span>
         23
       </span>
+       out of 
+      <span />
        
       expenses
+       totalling 
+      <span>
+        $23,423,233.32
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <WithStyles(ForwardRef(Button))
+        color="primary"
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        style={
+          Object {
+            "fontSize": "15px",
+          }
+        }
+        to="/create"
+        variant="contained"
+      >
+        Add Expense 
+      </WithStyles(ForwardRef(Button))>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should correctly render ExpensesSummary with one expense and one filtered expense 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <span>
+        23
+      </span>
+       out of 
+      <span>
+        1
+      </span>
+       
+      expense
        totalling 
       <span>
         $23,423,233.32
