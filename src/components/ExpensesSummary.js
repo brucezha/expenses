@@ -19,14 +19,14 @@ export const ExpensesSummary = ({ expensesCount, expensesTotal, expensesCountNoF
             </div>
         );
     } else {
-        const expenseWord = expensesCountNoFilter === 1 ? 'expense' : 'expenses';
+        const expenseWord = expensesCountNoFilter === 1 ? 'transaction' : 'transactions';
         const formattedExpensesTotal = numeral(expensesTotal / 100).format('$0,0.00')
         return (
             <div className="page-header">
                 <div className="content-container">
-                    <h1 className="page-header__title">Viewing <span>{expensesCount}</span> out of <span>{expensesCountNoFilter}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span></h1>
+                    <h1 className="page-header__title">Showing <span>{expensesCount}</span> out of <span>{expensesCountNoFilter}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span></h1>
                     <div className="page-header__actions">
-                        <Button component={ Link } to="/create" variant="contained" style={{ fontSize: '15px'}} color="primary">Add Expense </Button>
+                        <Button component={ Link } to="/create" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add Transaction </Button>
                     </div>
                 </div>
             </div>
