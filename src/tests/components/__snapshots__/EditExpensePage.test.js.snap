@@ -42,6 +42,11 @@ exports[`should render EditExpensePage correctly 1`] = `
     >
       Remove
     </WithStyles(ForwardRef(Button))>
+    <DeleteModale
+      deleteSelected={false}
+      handleClearDelete={[Function]}
+      remove={[Function]}
+    />
   </div>
 </div>
 `;

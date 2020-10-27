@@ -30,8 +30,8 @@ test('should handle edit expense', () => {
     expect(startEditExpense).toHaveBeenLastCalledWith(expenses[0].id, expenses[0]);
 });
 
-test('should handle startRemoveExpense expense', () => {
-    wrapper.find(Button).simulate('click');
-    expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(startRemoveExpense).toHaveBeenLastCalledWith({id : expenses[0].id});
-});
+// test('should handle startRemoveExpense expense', () => {
+//     wrapper.find(Button).simulate('click');
+//     expect(history.push).toHaveBeenLastCalledWith('/');
+//     expect(startRemoveExpense).toHaveBeenLastCalledWith({id : expenses[0].id});
+// });
