@@ -3,8 +3,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 import ExpenseForm from './ExpenseForm';
+import DeleteModal from './DeleteModal';
 
 export class EditExpensePage extends React.Component {
+  state = {
+    deleteSelected: false
+  };
+
+  handleDelete = () => {
+    this.setState(() => ({deleteSelected: true}));
+  };
+  handleClearDelete = () => {
+    this.setState(() => ({deleteSelected: false}));
+  };
+
   onSubmit = (expense) => {
     this.props.startEditExpense(this.props.expense.id, expense);
     this.props.history.push('/');
@@ -26,7 +38,19 @@ export class EditExpensePage extends React.Component {
             expense={this.props.expense}
             onSubmit={this.onSubmit}
           />
-          <Button onClick={this.onRemove} variant="contained" style={{ fontSize: '15px' }} color="secondary">Remove</Button>
+          <Button 
+            onClick={this.handleDelete} 
+            variant="contained" 
+            style={{ fontSize: '15px' }} 
+            color="secondary">
+            Remove
+          </Button> 
+          <DeleteModal 
+            deleteSelected={this.state.deleteSelected}
+            handleClearDelete={this.handleClearDelete}
+            remove={this.onRemove}
+          />
+          {/* <Button onClick={this.onRemove} variant="contained" style={{ fontSize: '15px' }} color="secondary">Remove</Button> */}
         </div>
       </div>
     );
