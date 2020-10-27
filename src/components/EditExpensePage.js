@@ -9,12 +9,14 @@ export class EditExpensePage extends React.Component {
   state = {
     deleteSelected: false
   };
-
+  handleCancel = () => {
+    this.props.history.push('/');
+  }
   handleDelete = () => {
-    this.setState(() => ({deleteSelected: true}));
+    this.setState(() => ({ deleteSelected: true }));
   };
   handleClearDelete = () => {
-    this.setState(() => ({deleteSelected: false}));
+    this.setState(() => ({ deleteSelected: false }));
   };
 
   onSubmit = (expense) => {
@@ -38,14 +40,22 @@ export class EditExpensePage extends React.Component {
             expense={this.props.expense}
             onSubmit={this.onSubmit}
           />
-          <Button 
-            onClick={this.handleDelete} 
-            variant="contained" 
-            style={{ fontSize: '15px' }} 
+          <Button
+            onClick={this.handleCancel}
+            variant="contained"
+            style={{ fontSize: '15px' }}
+            color="default">
+            Cancel
+        </Button>
+        &nbsp;&nbsp;&nbsp;
+          <Button
+            onClick={this.handleDelete}
+            variant="contained"
+            style={{ fontSize: '15px' }}
             color="secondary">
             Remove
-          </Button> 
-          <DeleteModal 
+          </Button>
+          <DeleteModal
             deleteSelected={this.state.deleteSelected}
             handleClearDelete={this.handleClearDelete}
             remove={this.onRemove}
