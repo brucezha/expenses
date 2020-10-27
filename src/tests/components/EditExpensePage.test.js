@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { EditExpensePage } from '../../components/EditExpensePage';
 import expenses from '../fixtures/expenses';
 import Button from '@material-ui/core/Button';
+import DeleteModal from '../../components/DeleteModal';
 
 let startEditExpense, startRemoveExpense, history, wrapper;
 
@@ -30,8 +31,12 @@ test('should handle edit expense', () => {
     expect(startEditExpense).toHaveBeenLastCalledWith(expenses[0].id, expenses[0]);
 });
 
-// test('should handle startRemoveExpense expense', () => {
-//     wrapper.find(Button).simulate('click');
-//     expect(history.push).toHaveBeenLastCalledWith('/');
-//     expect(startRemoveExpense).toHaveBeenLastCalledWith({id : expenses[0].id});
-// });
+test('should handle cancel', () => {
+    wrapper.find(Button).at(0).simulate('click');
+    expect(history.push).toHaveBeenLastCalledWith('/');
+});
+
+test('should handle delete button', () => {
+    wrapper.find(Button).at(1).simulate('click');
+    expect(wrapper.find(DeleteModal).prop('deleteSelected')).toBe(true);
+});

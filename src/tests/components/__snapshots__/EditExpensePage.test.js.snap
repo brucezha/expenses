@@ -31,6 +31,19 @@ exports[`should render EditExpensePage correctly 1`] = `
       onSubmit={[Function]}
     />
     <WithStyles(ForwardRef(Button))
+      color="default"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontSize": "15px",
+        }
+      }
+      variant="contained"
+    >
+      Cancel
+    </WithStyles(ForwardRef(Button))>
+       
+    <WithStyles(ForwardRef(Button))
       color="secondary"
       onClick={[Function]}
       style={
