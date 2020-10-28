@@ -60,7 +60,6 @@ export class EditExpensePage extends React.Component {
             handleClearDelete={this.handleClearDelete}
             remove={this.onRemove}
           />
-          {/* <Button onClick={this.onRemove} variant="contained" style={{ fontSize: '15px' }} color="secondary">Remove</Button> */}
         </div>
       </div>
     );

@@ -8,12 +8,17 @@ export default class ExpenseForm extends React.Component {
         super(props);
         this.state = {
             description: props.expense ? props.expense.description : '',
+            card: props.expense ? props.expense.card: '',
             note: props.expense ? props.expense.note : '',
             amount: props.expense ? (props.expense.amount / 100).toString() : '',
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             focused: false,
             error: ''
         };
+    }
+    onCardChange = (e) => {
+        const card = e.target.value;
+        this.setState(() => ({ card }))
     }
     onDescriptionChange = (e) => {
         const description = e.target.value;
@@ -41,6 +46,7 @@ export default class ExpenseForm extends React.Component {
             this.setState(() => ({ error: '' }));
             this.props.onSubmit({
                 description: this.state.description,
+                card: this.state.card,
                 amount: parseFloat(this.state.amount, 10) * 100,
                 createdAt: this.state.createdAt.valueOf(),
                 note: this.state.note
@@ -58,6 +64,13 @@ export default class ExpenseForm extends React.Component {
                         className="text-input"
                         value={this.state.description}
                         onChange={this.onDescriptionChange}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Card"
+                        className="text-input"
+                        value={this.state.card}
+                        onChange={this.onCardChange}
                     />
                     <input
                         type="number"

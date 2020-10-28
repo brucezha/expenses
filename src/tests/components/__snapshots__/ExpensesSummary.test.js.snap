@@ -10,14 +10,14 @@ exports[`should correctly render ExpensesSummary with one expense 1`] = `
     <h1
       className="page-header__title"
     >
-      Viewing 
+      Showing 
       <span>
         1
       </span>
        out of 
       <span />
        
-      expenses
+      transactions
        totalling 
       <span>
         $2.34
@@ -45,12 +45,13 @@ exports[`should correctly render ExpensesSummary with one expense 1`] = `
         style={
           Object {
             "fontSize": "15px",
+            "textTransform": "none",
           }
         }
         to="/create"
         variant="contained"
       >
-        Add Expense 
+        Add Transaction 
       </WithStyles(ForwardRef(Button))>
     </div>
   </div>
@@ -67,14 +68,14 @@ exports[`should correctly render ExpensesSummary with one expense 2`] = `
     <h1
       className="page-header__title"
     >
-      Viewing 
+      Showing 
       <span>
         23
       </span>
        out of 
       <span />
        
-      expenses
+      transactions
        totalling 
       <span>
         $23,423,233.32
@@ -102,12 +103,13 @@ exports[`should correctly render ExpensesSummary with one expense 2`] = `
         style={
           Object {
             "fontSize": "15px",
+            "textTransform": "none",
           }
         }
         to="/create"
         variant="contained"
       >
-        Add Expense 
+        Add Transaction 
       </WithStyles(ForwardRef(Button))>
     </div>
   </div>
@@ -124,7 +126,7 @@ exports[`should correctly render ExpensesSummary with one expense and one filter
     <h1
       className="page-header__title"
     >
-      Viewing 
+      Showing 
       <span>
         23
       </span>
@@ -133,7 +135,7 @@ exports[`should correctly render ExpensesSummary with one expense and one filter
         1
       </span>
        
-      expense
+      transaction
        totalling 
       <span>
         $23,423,233.32
@@ -161,12 +163,13 @@ exports[`should correctly render ExpensesSummary with one expense and one filter
         style={
           Object {
             "fontSize": "15px",
+            "textTransform": "none",
           }
         }
         to="/create"
         variant="contained"
       >
-        Add Expense 
+        Add Transaction 
       </WithStyles(ForwardRef(Button))>
     </div>
   </div>

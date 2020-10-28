@@ -10,12 +10,17 @@ exports[`should render Expense List with expenses 1`] = `
     <div
       className="show-for-mobile"
     >
-      Expenses
+      Transactions
     </div>
     <div
       className="show-for-desktop"
     >
-      Expense
+      Transactions
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Card
     </div>
     <div
       className="show-for-desktop"
@@ -64,12 +69,17 @@ exports[`should render Expense List with no expenses 1`] = `
     <div
       className="show-for-mobile"
     >
-      Expenses
+      Transactions
     </div>
     <div
       className="show-for-desktop"
     >
-      Expense
+      Transactions
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Card
     </div>
     <div
       className="show-for-desktop"

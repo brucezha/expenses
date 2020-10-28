@@ -21,6 +21,12 @@ exports[`should render Expense List Item with expenses 1`] = `
     className="list-item__data"
   >
      
+     
+  </h3>
+  <h3
+    className="list-item__data"
+  >
+     
     $1.95
      
   </h3>

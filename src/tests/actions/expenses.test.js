@@ -91,6 +91,7 @@ test('should add expense to database and store', (done) => {
     const expenseData = {
         description: 'Bagles',
         amount: 499,
+        card: '',
         note: 'from Price Chopper',
         createdAt: 1000
     };
@@ -116,6 +117,7 @@ test('should add expense to with default database and store', (done) => {
     const expenseDefault = {
         description: '',
         amount: 0,
+        card: '',
         note: '',
         createdAt: 0
     };

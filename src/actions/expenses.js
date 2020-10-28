@@ -12,11 +12,12 @@ export const startAddExpense = (expenseData = {}) => {
         const uid = getState().auth.uid;
         const {
             description = '',
+            card = '',
             note = '',
             amount = 0,
             createdAt = 0
         } = expenseData;
-        const expense = { description, note, amount, createdAt };
+        const expense = { description, card, note, amount, createdAt };
         
         //return the promise chain, we can continue chaining in test
         return database.ref(`users/${uid}/expenses`).push(expense).then((ref) => {

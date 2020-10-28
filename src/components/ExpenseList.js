@@ -8,6 +8,7 @@ export const ExpenseList = (props) => (
         <div className="list-header">
             <div className="show-for-mobile">Transactions</div>
             <div className="show-for-desktop">Transactions</div>
+            <div className="show-for-desktop">Card</div>
             <div className="show-for-desktop">Amount</div>
         </div>
         <div className="list-body">

@@ -16,6 +16,13 @@ exports[`should render ExpenseForm correctly 1`] = `
   <input
     className="text-input"
     onChange={[Function]}
+    placeholder="Card"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
     placeholder="Amount"
     type="number"
     value=""
@@ -150,6 +157,12 @@ exports[`should render ExpenseForm correctly with expense data 1`] = `
     placeholder="Description"
     type="text"
     value="Rent"
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Card"
+    type="text"
   />
   <input
     className="text-input"
@@ -291,6 +304,13 @@ exports[`should render error for invalid from submission 1`] = `
     className="text-input"
     onChange={[Function]}
     placeholder="Description"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Card"
     type="text"
     value=""
   />

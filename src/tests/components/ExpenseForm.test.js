@@ -41,10 +41,10 @@ test('should set note on note change', () => {
     expect(wrapper.state('note')).toBe(value);
 });
 
-test('should set ampint on amount change', () => {
+test('should set amount on amount change', () => {
     const value = '23.50';
     const wrapper = shallow(<ExpenseForm />);
-    wrapper.find('input').at(1).simulate('change', {
+    wrapper.find('input').at(2).simulate('change', {
         target: { value }
     });
     expect(wrapper.state('amount')).toBe(value);
@@ -69,6 +69,7 @@ test('should call onSubit prop for valid form submission', () => {
     expect(onSubmitSpy).toHaveBeenLastCalledWith({
         description: expenses[0].description,
         amount: expenses[0].amount,
+        card: expenses[0].card,
         note: expenses[0].note,
         createdAt: expenses[0].createdAt
     });
