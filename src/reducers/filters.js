@@ -1,6 +1,7 @@
 import moment from 'moment';
 
 const filterReducerDefaultState = {
+    cardName: '',
     text: '',
     sortBy: 'date',
     startDate: moment().startOf('month'),
@@ -9,6 +10,11 @@ const filterReducerDefaultState = {
 
 export default (state = filterReducerDefaultState, action) => {
     switch(action.type) {
+        case 'SET_CARD_FILTER':
+            return {
+                ...state,
+                cardName: action.cardName
+            };
         case 'SET_TEXT_FILTER':
             return {
                 ...state,

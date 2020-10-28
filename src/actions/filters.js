@@ -1,3 +1,9 @@
+// SET_CARD_FILTER
+export const setCardFilter = ( cardName ) => ({
+    type: 'SET_CARD_FILTER',
+    cardName
+});
+
 // SET_TEXT_FILTER
 export const setTextFilter = ( text ) => ({
     type: 'SET_TEXT_FILTER',

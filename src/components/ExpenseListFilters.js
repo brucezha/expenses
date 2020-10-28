@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
-import { setTextFilter, sortByDate, sortByAmount, setEndDate, setStartDate } from '../actions/filters';
+import { setCardFilter, setTextFilter, sortByDate, sortByAmount, setEndDate, setStartDate } from '../actions/filters';
 import { v4 as uuidv4 } from 'uuid';
 
 export class ExpenseListFilters extends React.Component {
@@ -9,6 +9,9 @@ export class ExpenseListFilters extends React.Component {
         calendarFocused: null,
         startDateId: uuidv4(),
         endDateId: uuidv4()
+    };
+    onCardChange = (e) => {
+        this.props.setCardFilter(e.target.value);
     };
     onDatesChange = ({ startDate, endDate }) => {
         this.props.setStartDate(startDate);
@@ -44,6 +47,16 @@ export class ExpenseListFilters extends React.Component {
                             <option value="amount">Amount</option>
                         </select>
                     </div>
+
+                    <div className="input-group__item">
+                        <select
+                            className="select"
+                            onChange={this.onCardChange}>
+                            <option value="">All Cards</option>
+                            {this.props.expenses.map((expense) => <option key={expense.card} value={expense.card}>{expense.card}</option>)}
+                        </select>
+                    </div>
+
                     <div className="input-group__item">
                         <DateRangePicker
                             startDate={this.props.filters.startDate} // momentPropTypes.momentObj or null,
@@ -68,10 +81,12 @@ export class ExpenseListFilters extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-    filters: state.filters
+    filters: state.filters,
+    expenses: state.expenses
 });
 
 const mapDispatchToProps = (dispatch) => ({
+    setCardFilter: (cardName) => dispatch(setCardFilter(cardName)),
     setStartDate: (startDate) => dispatch(setStartDate(startDate)),
     setEndDate: (endDate) => dispatch(setEndDate(endDate)),
     setTextFilter: (text) => dispatch(setTextFilter(text)),
