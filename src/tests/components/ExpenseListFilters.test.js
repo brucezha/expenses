@@ -1,14 +1,16 @@
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import { filters, altFilters } from '../fixtures/filters';
+import expenses from '../fixtures/expenses';
 import moment from 'moment';
 import React from 'react';
 import { shallow } from 'enzyme';
 import { DateRangePicker } from 'react-dates';
 jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
-let setStartDate, setEndDate, setTextFilter, setSelect, wrapper;
+let setCardFilter, setStartDate, setEndDate, setTextFilter, setSelect, wrapper;
 
 beforeEach(() => {
+    setCardFilter = jest.fn();
     setStartDate = jest.fn();
     setEndDate = jest.fn();
     setTextFilter = jest.fn();
@@ -17,6 +19,8 @@ beforeEach(() => {
     wrapper = shallow(
         <ExpenseListFilters 
             filters={filters}
+            expenses={expenses}
+            setCardFilter = {setCardFilter}
             setStartDate = {setStartDate}
             setEndDate = {setEndDate}
             setTextFilter = {setTextFilter}
@@ -49,7 +53,7 @@ test('should sort by date', () => {
     wrapper.setProps({
         filters: altFilters
     });
-    wrapper.find('select').simulate('change', {
+    wrapper.find('select').at(0).simulate('change', {
         target: { value }
     });
     expect(setSelect).toHaveBeenLastCalledWith(value);
@@ -57,7 +61,7 @@ test('should sort by date', () => {
 
 test('should sort by amount', () => {
     const value = 'amount';
-    wrapper.find('select').simulate('change', {
+    wrapper.find('select').at(0).simulate('change', {
         target: { value }
     });
     expect(setSelect).toHaveBeenLastCalledWith(value);

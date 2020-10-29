@@ -163,6 +163,7 @@ exports[`should render ExpenseForm correctly with expense data 1`] = `
     onChange={[Function]}
     placeholder="Card"
     type="text"
+    value=""
   />
   <input
     className="text-input"

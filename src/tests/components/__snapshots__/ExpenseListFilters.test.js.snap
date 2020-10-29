@@ -40,6 +40,32 @@ exports[`should render Expense List filters correctly 1`] = `
     <div
       className="input-group__item"
     >
+      <select
+        className="select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          All Cards
+        </option>
+        <option
+          key=""
+          value=""
+        />
+        <option
+          key=""
+          value=""
+        />
+        <option
+          key=""
+          value=""
+        />
+      </select>
+    </div>
+    <div
+      className="input-group__item"
+    >
       <withStyles(DateRangePicker)
         anchorDirection="left"
         appendToBody={false}
@@ -183,6 +209,32 @@ exports[`should render Expense List filters with alt filter correctly 1`] = `
         >
           Amount
         </option>
+      </select>
+    </div>
+    <div
+      className="input-group__item"
+    >
+      <select
+        className="select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          All Cards
+        </option>
+        <option
+          key=""
+          value=""
+        />
+        <option
+          key=""
+          value=""
+        />
+        <option
+          key=""
+          value=""
+        />
       </select>
     </div>
     <div

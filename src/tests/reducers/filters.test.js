@@ -5,6 +5,7 @@ test('should setup default filter values', () => {
     const state = filterReducer(undefined, { type: '@@INIT'});
     expect(state).toEqual({
         text: '',
+        cardName: '',
         sortBy: 'date',
         startDate: moment().startOf('month'),
         endDate: moment().endOf('month')
@@ -19,6 +20,7 @@ test('should set sortBy to amount', () => {
 test('should set sortBy to date', () => {
     const curState = {
         text: '',
+        cardName: '',
         sortBy: 'amount',
         startDate: undefined,
         endDate: undefined
@@ -36,11 +38,11 @@ test('should set text filter', () => {
 test('should set start date filter', () => {
     const startDate = moment().startOf('year')
     const state = filterReducer(undefined, { type: 'SET_START_DATE', startDate});
-    expect(state.startDate).toEqual(startDate);
+    expect(state.startDate).toBe(startDate);
 });
 
 test('should set end date filter', () => {
     const endDate = moment().endOf('year')
     const state = filterReducer(undefined, { type: 'SET_END_DATE', endDate});
-    expect(state.endDate).toEqual(endDate);
+    expect(state.endDate).toBe(endDate);
 });
