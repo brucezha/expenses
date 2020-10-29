@@ -38,6 +38,7 @@ export class EditExpensePage extends React.Component {
         <div className="content-container">
           <ExpenseForm
             expense={this.props.expense}
+            cards={this.props.cards}
             onSubmit={this.onSubmit}
           />
           <Button
@@ -67,7 +68,8 @@ export class EditExpensePage extends React.Component {
 };
 
 const mapStateToProps = (state, props) => ({
-  expense: state.expenses.find((expense) => expense.id === props.match.params.id)
+  expense: state.expenses.find((expense) => expense.id === props.match.params.id),
+  cards: state.expenses.map(expense => expense.card)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

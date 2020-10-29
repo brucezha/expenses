@@ -5,10 +5,12 @@ import { Button } from '@material-ui/core';
 
 export default class ExpenseForm extends React.Component {
     constructor(props) {
+        console.log(props);
         super(props);
         this.state = {
             description: props.expense ? props.expense.description : '',
             card: props.expense ? props.expense.card: '',
+            cards: props.cards ? props.cards : undefined,
             note: props.expense ? props.expense.note : '',
             amount: props.expense ? (props.expense.amount / 100).toString() : '',
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
@@ -65,6 +67,13 @@ export default class ExpenseForm extends React.Component {
                         value={this.state.description}
                         onChange={this.onDescriptionChange}
                     />
+                    <select
+                            className="select"
+                            onChange={this.onCardChange}>
+                            <option value={this.state.card}>{this.state.card}</option>
+                            {this.state.cards} && {this.state.cards.map((card) => <option value={card}>{card}</option>)}
+                    </select>
+                    {/*
                     <input
                         type="text"
                         placeholder="Card"
@@ -72,6 +81,7 @@ export default class ExpenseForm extends React.Component {
                         value={this.state.card}
                         onChange={this.onCardChange}
                     />
+                    */}
                     <input
                         type="number"
                         placeholder="Amount"
