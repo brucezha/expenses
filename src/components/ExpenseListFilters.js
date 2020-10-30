@@ -53,7 +53,7 @@ export class ExpenseListFilters extends React.Component {
                             className="select"
                             onChange={this.onCardChange}>
                             <option value="">All Cards</option>
-                            {this.props.expenses.map((expense) => <option key={expense.card} value={expense.card}>{expense.card}</option>)}
+                            {this.props.cards.map((card) => <option key={card.id} value={card.cardName}>{card.cardName}</option>)}
                         </select>
                     </div>
 
@@ -82,7 +82,8 @@ export class ExpenseListFilters extends React.Component {
 
 const mapStateToProps = (state) => ({
     filters: state.filters,
-    expenses: state.expenses
+    expenses: state.expenses,
+    cards: state.cards
 });
 
 const mapDispatchToProps = (dispatch) => ({

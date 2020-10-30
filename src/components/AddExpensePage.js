@@ -28,7 +28,7 @@ export class AddExpensePage extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-    cards: state.expenses.map(expense => expense.card)
+    cards: state.cards
   });
 
 const mapDispatchToProps = (dispatch) => ({

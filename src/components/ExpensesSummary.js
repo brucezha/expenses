@@ -27,6 +27,8 @@ export const ExpensesSummary = ({ expensesCount, expensesTotal, expensesCountNoF
                     <h1 className="page-header__title">Showing <span>{expensesCount}</span> out of <span>{expensesCountNoFilter}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span></h1>
                     <div className="page-header__actions">
                         <Button component={ Link } to="/create" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add Transaction </Button>
+                        &nbsp;&nbsp;
+                        <Button component={ Link } to="/addCard" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add A New Card </Button>
                     </div>
                 </div>
             </div>

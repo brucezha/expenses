@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core';
 
 export default class ExpenseForm extends React.Component {
     constructor(props) {
-        console.log(props);
+        // console.log(props.cards.map((card) => card.cardName));
         super(props);
         this.state = {
             description: props.expense ? props.expense.description : '',
@@ -71,7 +71,10 @@ export default class ExpenseForm extends React.Component {
                             className="select"
                             onChange={this.onCardChange}>
                             <option value={this.state.card}>{this.state.card}</option>
+                             {this.state.cards.map((card) => <option key={card.id} value={card.cardName}>{card.cardName}</option>)}
+                            {/* 
                             {this.state.cards} && {this.state.cards.map((card) => <option value={card}>{card}</option>)}
+                            */}
                     </select>
                     {/*
                     <input
