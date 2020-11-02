@@ -25,6 +25,20 @@ export const startAddCard = (cardData = {}) => {
 };
 
 // Edit Card
+export const editCard = (id, updates) => ({
+    type: 'EDIT_CARD',
+    id,
+    updates
+});
+
+export const startEditCard = (id, updates) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/cards/${id}`).update(updates).then(() => {
+            dispatch(editCard(id, updates));
+        });
+    };
+};
 
 // Remove Card
 

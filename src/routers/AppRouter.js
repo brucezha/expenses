@@ -7,6 +7,8 @@ import AddCardPage from '../components/AddCardPage';
 import EditExpensePage from '../components/EditExpensePage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
+import EditCardPage from '../components/EditCardPage';
+import CardList from '../components/CardList';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -20,6 +22,8 @@ const AppRouter = () => (
         <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
         <PrivateRoute path="/create" component={AddExpensePage} />
         <PrivateRoute path="/addCard" component={AddCardPage} />
+        <PrivateRoute path="/manage" component={CardList} />
+        <PrivateRoute path="/cards/:id" component={EditCardPage} />
         <PrivateRoute path="/edit/:id" component={EditExpensePage} />
         <Route component={NotFoundPage} />
       </Switch>
