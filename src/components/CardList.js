@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 import CardListItem from './CardListItem';
 import { Link } from 'react-router-dom'
-// import selectExpenses from '../selectors/expenses';
 
 export const ExpenseList = (props) => (
     <div>
@@ -17,8 +16,6 @@ export const ExpenseList = (props) => (
         </div>
         <div className="content-container">
             <div className="list-header">
-                <div className="show-for-desktop">Card</div>
-                <div className="show-for-desktop">Posted Charges</div>
             </div>
             <div className="list-body">
                 {
@@ -39,8 +36,7 @@ export const ExpenseList = (props) => (
 
 const mapStateToProps = (state) => {
     return {
-        expenses: state.expenses,
-        cards: state.cards
+        cards: state.cards,
     };
 };
 

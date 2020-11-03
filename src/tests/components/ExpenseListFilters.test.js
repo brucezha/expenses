@@ -7,7 +7,7 @@ import { shallow } from 'enzyme';
 import { DateRangePicker } from 'react-dates';
 jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
-let setCardFilter, setStartDate, setEndDate, setTextFilter, setSelect, wrapper;
+let setCardFilter, sortByDate, sortByAmount, setStartDate, setEndDate, setTextFilter, setSelect, wrapper;
 
 beforeEach(() => {
     setCardFilter = jest.fn();
@@ -15,9 +15,13 @@ beforeEach(() => {
     setEndDate = jest.fn();
     setTextFilter = jest.fn();
     setSelect = jest.fn();
+    sortByAmount = jest.fn();
+    sortByDate = jest.fn();
 
     wrapper = shallow(
         <ExpenseListFilters 
+            sortByDate={sortByDate}
+            sortByAmount={sortByAmount}
             filters={filters}
             expenses={expenses}
             setCardFilter = {setCardFilter}
@@ -28,6 +32,7 @@ beforeEach(() => {
         />
     );
 });
+
 
 test('should render Expense List filters correctly', () => {
     expect(wrapper).toMatchSnapshot();

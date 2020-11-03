@@ -18,7 +18,7 @@ export class EditCardPage extends React.Component {
   handleClearDelete = () => {
     this.setState(() => ({ deleteSelected: false }));
   };
-  onSubmit = (card) => {
+  onSubmit = (card) => { 
     this.props.startEditCard(this.props.card.id, card);
     this.props.history.push('/manage');
   };

@@ -51,7 +51,35 @@ exports[`should correctly render ExpensesSummary with one expense 1`] = `
         to="/create"
         variant="contained"
       >
-        Add Transaction 
+        Add Transaction
+      </WithStyles(ForwardRef(Button))>
+        
+      <WithStyles(ForwardRef(Button))
+        color="primary"
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        style={
+          Object {
+            "fontSize": "15px",
+            "textTransform": "none",
+          }
+        }
+        to="/manage"
+        variant="contained"
+      >
+        Manage Cards
       </WithStyles(ForwardRef(Button))>
     </div>
   </div>
@@ -109,7 +137,35 @@ exports[`should correctly render ExpensesSummary with one expense 2`] = `
         to="/create"
         variant="contained"
       >
-        Add Transaction 
+        Add Transaction
+      </WithStyles(ForwardRef(Button))>
+        
+      <WithStyles(ForwardRef(Button))
+        color="primary"
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        style={
+          Object {
+            "fontSize": "15px",
+            "textTransform": "none",
+          }
+        }
+        to="/manage"
+        variant="contained"
+      >
+        Manage Cards
       </WithStyles(ForwardRef(Button))>
     </div>
   </div>
@@ -169,7 +225,35 @@ exports[`should correctly render ExpensesSummary with one expense and one filter
         to="/create"
         variant="contained"
       >
-        Add Transaction 
+        Add Transaction
+      </WithStyles(ForwardRef(Button))>
+        
+      <WithStyles(ForwardRef(Button))
+        color="primary"
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        style={
+          Object {
+            "fontSize": "15px",
+            "textTransform": "none",
+          }
+        }
+        to="/manage"
+        variant="contained"
+      >
+        Manage Cards
       </WithStyles(ForwardRef(Button))>
     </div>
   </div>
