@@ -1,8 +1,7 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
 import { connect } from 'react-redux';
-// import { startEditCard, startRemoveExpense } from '../actions/cards';
-import { startEditCard } from '../actions/cards';
+import { startEditCard, startRemoveCard } from '../actions/cards';
 import CardForm from './CardForm';
 import DeleteModal from './DeleteModal';
 
@@ -11,7 +10,7 @@ export class EditCardPage extends React.Component {
     deleteSelected: false
   };
   handleCancel = () => {
-    this.props.history.push('/');
+    this.props.history.push('/manage');
   }
   handleDelete = () => {
     this.setState(() => ({ deleteSelected: true }));
@@ -23,10 +22,10 @@ export class EditCardPage extends React.Component {
     this.props.startEditCard(this.props.card.id, card);
     this.props.history.push('/manage');
   };
-//   onRemove = () => {
-//     this.props.startRemoveExpense({ id: this.props.expense.id });
-//     this.props.history.push('/');
-//   }
+  onRemove = () => {
+    this.props.startRemoveCard({ id: this.props.card.id });
+    this.props.history.push('/');
+  }
   render() {
     // console.log(this.props);
     return (
@@ -38,31 +37,31 @@ export class EditCardPage extends React.Component {
         </div>
         <div className="content-container">
           <CardForm
-            card ={this.props.card}
+            card={this.props.card}
             onSubmit={this.onSubmit}
           />
-          {/* 
           <Button
             onClick={this.handleCancel}
             variant="contained"
             style={{ fontSize: '15px' }}
             color="default">
             Cancel
-        </Button>
+          </Button>
         &nbsp;&nbsp;&nbsp;
           <Button
             onClick={this.handleDelete}
             variant="contained"
             style={{ fontSize: '15px' }}
             color="secondary">
-            Remove
+            Remove Card
           </Button>
+
           <DeleteModal
             deleteSelected={this.state.deleteSelected}
             handleClearDelete={this.handleClearDelete}
             remove={this.onRemove}
           />
-          */}
+
         </div>
       </div>
     );
@@ -74,8 +73,8 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
-    startEditCard: (id, card) => dispatch(startEditCard(id, card)),
-//   startRemoveExpense: (id) => dispatch(startRemoveExpense(id))
+  startEditCard: (id, card) => dispatch(startEditCard(id, card)),
+  startRemoveCard: (id) => dispatch(startRemoveCard(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditCardPage);

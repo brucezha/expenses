@@ -7,8 +7,10 @@ export default (state = cardReducerDefaultState, action) => {
                 ...state,
                 action.card
             ];
-        // case 'REMOVE_EXPENSE':
-        //     return state.filter(({ id }) => id !== action.id );
+        case 'REMOVE_CARD':
+            return state.filter(({
+                id
+            }) => id !== action.id);
         case 'EDIT_CARD':
             return state.map((card) => {
                 if (card.id === action.id) {
@@ -20,7 +22,7 @@ export default (state = cardReducerDefaultState, action) => {
                     return card;
                 };
             });
-        case 'SET_CARDS': 
+        case 'SET_CARDS':
             return action.cards;
         default:
             return state;

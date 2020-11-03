@@ -13,11 +13,9 @@ export const ExpensesSummary = ({ expensesCount, expensesTotal, expensesCountNoF
                 <div className="content-container">
                     <h1 className="page-header__title">There isn't anything to show</h1>
                     <div className="page-header__actions">
-                        <Button component={ Link } to="/create" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add Expense </Button>
+                        <Button component={Link} to="/create" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add Expense </Button>
                         &nbsp;&nbsp;
-                        <Button component={ Link } to="/addCard" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add A New Card</Button>
-                        &nbsp;&nbsp;
-                        <Button component={ Link } to="/manage" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Manage Cards</Button>
+                        <Button component={Link} to="/manage" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Manage Cards</Button>
                     </div>
                 </div>
             </div>
@@ -30,11 +28,9 @@ export const ExpensesSummary = ({ expensesCount, expensesTotal, expensesCountNoF
                 <div className="content-container">
                     <h1 className="page-header__title">Showing <span>{expensesCount}</span> out of <span>{expensesCountNoFilter}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span></h1>
                     <div className="page-header__actions">
-                        <Button component={ Link } to="/create" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add Transaction</Button>
+                        <Button component={Link} to="/create" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add Transaction</Button>
                         &nbsp;&nbsp;
-                        <Button component={ Link } to="/addCard" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add A New Card</Button>
-                        &nbsp;&nbsp;
-                        <Button component={ Link } to="/manage" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Manage Cards</Button>
+                        <Button component={Link} to="/manage" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Manage Cards</Button>
                     </div>
                 </div>
             </div>
