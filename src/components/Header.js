@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { startLogout } from '../actions/auth';
 
-
 export const Header = ({ startLogout }) => (
     <header className="header-background">
         <div className="content-container">
