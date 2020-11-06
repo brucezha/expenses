@@ -1,6 +1,7 @@
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import { filters, altFilters } from '../fixtures/filters';
 import expenses from '../fixtures/expenses';
+import cards from '../fixtures/cards';
 import moment from 'moment';
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -20,6 +21,7 @@ beforeEach(() => {
 
     wrapper = shallow(
         <ExpenseListFilters 
+            cards={cards}
             sortByDate={sortByDate}
             sortByAmount={sortByAmount}
             filters={filters}
