@@ -9,7 +9,7 @@ export default class ExpenseForm extends React.Component {
         super(props);
         this.state = {
             description: props.expense ? props.expense.description : '',
-            card: props.expense ? props.expense.card: '',
+            card: props.expense ? props.expense.card : '',
             cards: props.cards ? props.cards : undefined,
             note: props.expense ? props.expense.note : '',
             amount: props.expense ? (props.expense.amount / 100).toString() : '',
@@ -57,26 +57,28 @@ export default class ExpenseForm extends React.Component {
     };
     render() {
         return (
-                <form className="form" onSubmit={this.onSubmit}>
-                    {this.state.error && <p className="form__error">{this.state.error}</p>}
-                    <input
-                        type="text"
-                        placeholder="Description"
-                        autoFocus
-                        className="text-input"
-                        value={this.state.description}
-                        onChange={this.onDescriptionChange}
-                    />
-                    <select
-                            className="select"
-                            onChange={this.onCardChange}>
-                            <option value={this.state.card}>{this.state.card}</option>
-                             {this.state.cards.map((card) => <option key={card.id} value={card.cardName}>{card.cardName}</option>)}
-                            {/* 
-                            {this.state.cards} && {this.state.cards.map((card) => <option value={card}>{card}</option>)}
-                            */}
-                    </select>
-                    {/*
+            <form className="form" onSubmit={this.onSubmit}>
+                {this.state.error && <p className="form__error">{this.state.error}</p>}
+                <input
+                    type="text"
+                    placeholder="Description"
+                    autoFocus
+                    className="text-input"
+                    value={this.state.description}
+                    onChange={this.onDescriptionChange}
+                />
+                <select
+                    className="select"
+                    onChange={this.onCardChange}>
+                    <option value={this.state.card}>{this.state.card}</option>
+                    {
+                        this.state.cards.map((card) =>
+                            <option key={card.id} value={card.cardName}>
+                                {card.cardName}
+                            </option>)
+                    }
+                </select>
+                {/*
                     <input
                         type="text"
                         placeholder="Card"
@@ -85,32 +87,32 @@ export default class ExpenseForm extends React.Component {
                         onChange={this.onCardChange}
                     />
                     */}
-                    <input
-                        type="number"
-                        placeholder="Amount"
-                        className="text-input"
-                        value={this.state.amount}
-                        onChange={this.OnAmountChange}
-                    />
-                    <SingleDatePicker
-                        date={this.state.createdAt} // momentPropTypes.momentObj or null
-                        onDateChange={createdAt => { if (createdAt) { this.setState({ createdAt }) } }} // PropTypes.func.isRequired
-                        focused={this.state.focused} // PropTypes.bool
-                        onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
-                        //id={this.state.id} // PropTypes.string.isRequired,
-                        numberOfMonths={1}
-                        isOutsideRange={() => false}
-                    />
-                    <textarea
-                        className="textarea"
-                        placeholder="Add a note for your expense (optional)"
-                        value={this.state.note}
-                        onChange={this.onNoteChange}
-                    />
-                    <div>
-                        <Button type="submit" variant="contained" style={{ fontSize: '15px'}} color="primary">Sumbit Expense</Button>
-                    </div>
-                </form>
+                <input
+                    type="number"
+                    placeholder="Amount"
+                    className="text-input"
+                    value={this.state.amount}
+                    onChange={this.OnAmountChange}
+                />
+                <SingleDatePicker
+                    date={this.state.createdAt} // momentPropTypes.momentObj or null
+                    onDateChange={createdAt => { if (createdAt) { this.setState({ createdAt }) } }} // PropTypes.func.isRequired
+                    focused={this.state.focused} // PropTypes.bool
+                    onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
+                    //id={this.state.id} // PropTypes.string.isRequired,
+                    numberOfMonths={1}
+                    isOutsideRange={() => false}
+                />
+                <textarea
+                    className="textarea"
+                    placeholder="Add a note for your expense (optional)"
+                    value={this.state.note}
+                    onChange={this.onNoteChange}
+                />
+                <div>
+                    <Button type="submit" variant="contained" style={{ fontSize: '15px' }} color="primary">Sumbit Expense</Button>
+                </div>
+            </form>
         )
     }
 }
