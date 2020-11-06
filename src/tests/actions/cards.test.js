@@ -1,6 +1,8 @@
 import { 
     startAddCard, 
-    startSetCards
+    startSetCards,
+    removeCard,
+    startRemoveCard
 } from '../../actions/cards';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -16,32 +18,32 @@ beforeEach((done) => {
     cards.forEach(({ id, cardName }) => {
         cardsData[id] = { id, cardName };
     });
-    database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done());
+    database.ref(`users/${uid}/cards`).set(cardsData).then(() => done());
 });
 
-// test('should setup remove expense action object', () => {
-//     const action = removeExpense({ id: '123abc' });
-//     expect(action).toEqual({
-//         type: 'REMOVE_EXPENSE',
-//         id: '123abc'
-//     });
-// });
+test('should setup remove expense action object', () => {
+    const action = removeCard({ id: '123abc' });
+    expect(action).toEqual({
+        type: 'REMOVE_CARD',
+        id: '123abc'
+    });
+});
 
-// test('should remove expense from firebase', (done) => {
-//     const store = createMockStore(defaultAuthState);
-//     const id = expenses[2].id;
-//     store.dispatch(startRemoveExpense({ id })).then(() => {
-//         const actions = store.getActions();
-//         expect(actions[0]).toEqual({
-//             type: 'REMOVE_EXPENSE',
-//             id
-//         });
-//         return database.ref(`users/${uid}/expenses/${id}`).once('value');
-//     }).then((snapshot) => {
-//         expect(snapshot.val()).toBeFalsy();
-//         done();
-//     });
-// });
+test('should remove card from firebase', (done) => {
+    const store = createMockStore(defaultAuthState);
+    const id = cards[1].id;
+    store.dispatch(startRemoveCard({ id })).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'REMOVE_CARD',
+            id
+        });
+        return database.ref(`users/${uid}/cards/${id}`).once('value');
+    }).then((snapshot) => {
+        expect(snapshot.val()).toBeFalsy();
+        done();
+    });
+});
 
 // test('should setup edit expense action object', () => {
 //     const action = editExpense('123abc', { note: 'New note value'});

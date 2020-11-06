@@ -21,6 +21,7 @@ exports[`should render Expense List Item with expenses 1`] = `
     className="list-item__data"
   >
      
+    Chase
      
   </h3>
   <h3

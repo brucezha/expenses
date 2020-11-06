@@ -176,8 +176,10 @@ exports[`should render ExpenseForm correctly with expense data 1`] = `
     onChange={[Function]}
   >
     <option
-      value=""
-    />
+      value="Amex"
+    >
+      Amex
+    </option>
     <option
       key="1"
       value="Amex"
