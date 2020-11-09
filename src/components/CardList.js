@@ -11,6 +11,8 @@ export const ExpenseList = (props) => (
                 <h1 className="page-header__title">Manage Cards</h1>
                 <div className="page-header__actions">
                     <Button component={Link} to="/addCard" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="primary">Add A New Card</Button>
+                    &nbsp;&nbsp;
+                    <Button component={Link} to="/" variant="contained" style={{ fontSize: '15px', textTransform: 'none' }} color="default">Cancel </Button>
                 </div>
             </div>
         </div>

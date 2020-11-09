@@ -21,6 +21,33 @@ exports[`should render AddExpensePage correctly 1`] = `
     <ExpenseForm
       onSubmit={[Function]}
     />
+    <WithStyles(ForwardRef(Button))
+      color="default"
+      component={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      style={
+        Object {
+          "fontSize": "15px",
+          "textTransform": "none",
+        }
+      }
+      to="/"
+      variant="contained"
+    >
+      Cancel 
+    </WithStyles(ForwardRef(Button))>
   </div>
 </div>
 `;
